@@ -5,13 +5,11 @@ public class Room {
     private String roomName;
     private int numberOfSpaces;
     private ArrayList<Person>personList;
-    private int numberOfPeople;
 
     public Room(String roomName, int numberOfSpaces){
         this.roomName = roomName;
         this.numberOfSpaces = numberOfSpaces;
         this.personList = new ArrayList<>();
-        this.numberOfPeople = 0;
     }
 
     public void addPerson(Person person){
@@ -32,17 +30,13 @@ public class Room {
         }
     }
 
-    public void updateNumberOfPeople(){
-        int num = 0;
-        for (Person person : personList){
-            num++;
-        }
-        this.numberOfPeople = num;
+    public int numberOfPersons(){
+        return personList.size();
     }
 
 @Override
     public String toString(){
-        return "Room name: " + this.roomName + ", Max number of people: " + this.numberOfSpaces + ", Number of people: " + numberOfPeople;
+        return "Room name: " + this.roomName + ", Max number of people: " + this.numberOfSpaces + ", Number of people: " + numberOfPersons();
     }
 
 }

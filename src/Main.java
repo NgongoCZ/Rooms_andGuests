@@ -7,5 +7,6 @@ public class Main {
         UI newUi = new UI(myScanner);
 
         newUi.start();
+        myScanner.close();
     }
 }
